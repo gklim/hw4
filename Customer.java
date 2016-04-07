@@ -1,45 +1,50 @@
 package hw4;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 
 public class Customer {
-    private String name;
-    private Map<Item, Double> rentals = new HashMap<Item, Double>();
+	private String name;
+	private ArrayList<Rental> rentalList;
+	private ArrayList<Rental> saleList;
+	private int frequentRenterPoints;
+	private double totalCost;
     
     public Customer (String name) {
-        this.name = name;
+    	this.name = name;
+		rentalList = new ArrayList<>();
+		saleList = new ArrayList<>();
+		frequentRenterPoints = 0;
+		totalCost = 0.0;
     }
     
-    public void addRental(Item rental, double amount) {
-        this.rentals.put(rental, amount);
+    public void addRental(Rental rental) {
+    	rentalList.add(rental);
+		totalCost += rental.getCost();
+		addPreferredRenterPoints(rental);
     }
+    
+    public void addSale(Rental rental) {
+		saleList.add(rental);
+		totalCost += rental.getSaleCost();
+	}
     
     public String getName() {
         return this.name;
     }
     
     public String printStatement() {
-    
-        double totalAmount = 0;
-        int frequentRenterPoints = 0;
-        String result = "Rental Record for " + getName() + "\n";
- 
-        for(Map.Entry<Item, Double> each : this.rentals.entrySet()) {
-            
-            double thisAmount = each.getValue();
-            frequentRenterPoints += each.getKey().getFrequentRenterPoints();
-            
-            // show figures for this rental
-            result += "\t" + each.getKey().getTitle() +
-                      "\t" + String.valueOf(thisAmount) + "\n";
-            totalAmount += thisAmount;
-        }
-        
-        // add footer lines
-        result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
-        result += "You have earned " + String.valueOf(frequentRenterPoints) +
-                  " frequent renter points";
+    	String result = "";
+    	result += ("Customer: " + name + "\n");
+    	for(int i = 0; i < rentalList.size(); i++){
+    		result += rentalList.get(i).getItem().getTitle() + "\t" + String.valueOf(rentalList.get(i).getCost()) + "\n";
+    	}
+    	
+    	for(int i = 0; i < saleList.size(); i++){
+    		result += saleList.get(i).getItem().getTitle() + "\t" + String.valueOf(saleList.get(i).getCost() + "\n");
+    	}
+    	
+    	result += "Amount owed is " + String.valueOf(totalCost) + "\n";
+        result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
         return result;
     }
     
@@ -49,4 +54,8 @@ public class Customer {
     	result += "\n</body>\n</html>";
     	return result;
     }
+    
+    private void addPreferredRenterPoints(Rental rental) {
+		frequentRenterPoints += rental.getfrequentRenterPoints();
+	}
 }
