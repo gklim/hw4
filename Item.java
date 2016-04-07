@@ -4,7 +4,7 @@ public abstract class Item {
 	public String title;
 	protected int rentalPeriod;
 	protected double rentalBaseCost;
-	protected double lateFee;
+	protected double sellBaseCost;
 	
 	public Item(String title) {
 		this.title = title;
@@ -14,15 +14,15 @@ public abstract class Item {
 		return this.title;
 	}
 	
-	public double rent(int daysRented) {
-		double rentalCost = rentalBaseCost * daysRented;
+	public double rentCharge(int daysRented) {
+		double result = rentalBaseCost;
 		if(daysRented > rentalPeriod) {
-			rentalCost += lateFee * (daysRented - rentalPeriod);
+			result += (daysRented - rentalPeriod) * 1.5;
 		}
-		return rentalCost;
+		return result;
 	}
 	
-	public double sell() {
-		return rentalBaseCost * 5;
+	public double sellCharge() {
+		return sellBaseCost * 3;
 	}
 }

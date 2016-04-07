@@ -6,7 +6,7 @@ public class RegularMovie extends Item {
 			super(title);
 			rentalPeriod = 2;
 			rentalBaseCost = 2;
-			lateFee = 2.5;
+			sellBaseCost = 10;
 	}
 	
 }

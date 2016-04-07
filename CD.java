@@ -4,9 +4,9 @@ public class CD extends Item {
 
 	public CD(String title) {
 		super(title);
-		rentalPeriod = 3;
+		rentalPeriod = 5;
 		rentalBaseCost = 1;
-		lateFee = 1.5;
+		sellBaseCost = 5;
 	}
 
 

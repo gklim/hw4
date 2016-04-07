@@ -6,7 +6,7 @@ public class Book extends Item {
 		super(title);
 		rentalPeriod = 2;
 		rentalBaseCost = .5;
-		lateFee = 1;
+		sellBaseCost = 10;
 	}
 	
 }

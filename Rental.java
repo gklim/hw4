@@ -2,7 +2,6 @@ package hw4;
 
 public class Rental {	
 	private Item item;
-
 	private int daysRented;
 	
 	public Rental(Item item, int daysRented) {
@@ -19,11 +18,11 @@ public class Rental {
     }
 
 	public double getCost() {
-		return this.item.rent(getDaysRented());
+		return this.item.rentCharge(getDaysRented());
 	}
 	
 	public double getSaleCost() {
-		return this.item.sell();
+		return this.item.sellCharge();
 	}
 	
 	public int getfrequentRenterPoints(){

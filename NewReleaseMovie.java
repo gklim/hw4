@@ -7,12 +7,12 @@ public class NewReleaseMovie extends Item {
 	}
 	
 	@Override
-	public double rent(int daysRented) {
+	public double rentCharge(int daysRented) {
 		return daysRented * 3;
 	}
 	
 	@Override
-	public double sell(){
+	public double sellCharge(){
 		return 20; 
 	}
 }

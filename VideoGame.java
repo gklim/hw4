@@ -6,6 +6,6 @@ public class VideoGame extends Item {
 		super(title);
 		rentalPeriod = 5;
 		rentalBaseCost = 1.5;
-		lateFee = 2;
+		sellBaseCost = 15;
 	}
 }
