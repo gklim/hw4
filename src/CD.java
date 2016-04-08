@@ -1,5 +1,3 @@
-package hw4;
-
 public class CD extends Item {
 	
     private int daysRented;

@@ -1,5 +1,3 @@
-package hw4;
-
 public class ChildrensMovie extends Item {
 	
     private int daysRented;

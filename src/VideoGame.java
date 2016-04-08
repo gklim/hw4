@@ -1,10 +1,8 @@
-package hw4;
-
-public class DVD extends Item {
+public class VideoGame extends Item {
 	
     private int daysRented;
 
-	public DVD(String title) {
+	public VideoGame(String title) {
 		super(title);
 	}
 	

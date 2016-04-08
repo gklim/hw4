@@ -1,5 +1,3 @@
-package hw4;
-
 public abstract class Item {
     
     private String title;

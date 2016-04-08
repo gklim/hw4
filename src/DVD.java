@@ -1,10 +1,8 @@
-package hw4;
-
-public class NewReleaseMovie extends Item {
+public class DVD extends Item {
 	
     private int daysRented;
 
-	public NewReleaseMovie(String title) {
+	public DVD(String title) {
 		super(title);
 	}
 	
@@ -13,15 +11,11 @@ public class NewReleaseMovie extends Item {
     }
 	
     public void rentItem(Customer c, int days) {
-    	this.daysRented = days;
-    	
-    	double amount = days * 3;
-    	
-    	c.addRental(this, amount);
+    	// TODO calculate price and add to customer's purchase list
     }
     
     public int getFrequentRenterPoints() {
-    	return (daysRented > 1) ? 2 : 1;
+    	return 1;
     }
     
     public int getDaysRented() {

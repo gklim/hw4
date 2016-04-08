@@ -1,10 +1,8 @@
-package hw4;
-
-public class Book extends Item {
+public class RegularMovie extends Item {
 	
     private int daysRented;
 
-	public Book(String title) {
+	public RegularMovie(String title) {
 		super(title);
 	}
 	
@@ -13,7 +11,13 @@ public class Book extends Item {
     }
 	
     public void rentItem(Customer c, int days) {
-    	// TODO calculate price and add to customer's purchase list
+    	this.daysRented = days;
+    	
+    	double amount = 2.0;
+    	if(days > 2)
+    		amount += (days - 2) * 1.5;
+    	
+    	c.addRental(this, amount);
     }
     
     public int getFrequentRenterPoints() {

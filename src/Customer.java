@@ -1,5 +1,3 @@
-package hw4;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,7 +18,6 @@ public class Customer {
     }
     
     public String printStatement() {
-    
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         String result = "Rental Record for " + getName() + "\n";
