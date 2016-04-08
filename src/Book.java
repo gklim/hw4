@@ -1,24 +1,10 @@
 public class Book extends Item {
 	
-    private int daysRented;
-
 	public Book(String title) {
 		super(title);
+		rentalPeriod = 2;
+		rentalBaseCost = .5;
+		sellBaseCost = 10;
 	}
 	
-	public void buyItem(Customer c) {
-    	// TODO calculate price and add to customer's purchase list
-    }
-	
-    public void rentItem(Customer c, int days) {
-    	// TODO calculate price and add to customer's purchase list
-    }
-    
-    public int getFrequentRenterPoints() {
-    	return 1;
-    }
-    
-    public int getDaysRented() {
-        return this.daysRented;
-    }
 }
