@@ -15,7 +15,7 @@ public class Main {
 		customer.addRental(firstRental);
 		customer.addRental(secondRental);
 		customer.addRental(thirdRental);
-		customer.addRental(fourthRental);
+		customer.addSale(fourthRental);
 
 		System.out.println(customer.printStatement());
 	}

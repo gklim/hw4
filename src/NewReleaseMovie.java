@@ -1,5 +1,3 @@
-package hw4;
-
 public class NewReleaseMovie extends Item {
 	
 	public NewReleaseMovie(String title) {

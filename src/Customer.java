@@ -1,5 +1,3 @@
-package hw4;
-
 import java.util.ArrayList;
 
 public class Customer {
@@ -34,16 +32,17 @@ public class Customer {
     
     public String printStatement() {
     	String result = "";
-    	result += ("Customer: " + name + "\n");
+    	result += ("Customer: " + name + "\n" + "\nRental Items:\n");
     	for(int i = 0; i < rentalList.size(); i++){
     		result += rentalList.get(i).getItem().getTitle() + "\t" + String.valueOf(rentalList.get(i).getCost()) + "\n";
     	}
-    	
+
+		result += "\nItems sold:\n";
     	for(int i = 0; i < saleList.size(); i++){
     		result += saleList.get(i).getItem().getTitle() + "\t" + String.valueOf(saleList.get(i).getCost() + "\n");
     	}
     	
-    	result += "Amount owed is " + String.valueOf(totalCost) + "\n";
+    	result += "\nAmount owed is " + String.valueOf(totalCost) + "\n";
         result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
         return result;
     }

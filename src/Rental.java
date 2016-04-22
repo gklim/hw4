@@ -1,6 +1,4 @@
-package hw4;
-
-public class Rental {	
+public class Rental {
 	private Item item;
 	private int daysRented;
 	
